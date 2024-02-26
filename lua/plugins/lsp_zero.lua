@@ -13,7 +13,7 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
-		lazy = false,
+		event = "UIEnter",
 		config = true,
 	},
 
@@ -21,7 +21,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		cond = not vim.g.vscode,
-		event = "InsertEnter",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
 			{ "hrsh7th/cmp-path" },
@@ -87,10 +87,6 @@ return {
 					vim.lsp.buf.definition()
 				end, { buffer = bufnr, remap = false, desc = "Go to definition" })
 
-				vim.keymap.set("n", "<leader>fm", function()
-					vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-				end, { buffer = bufnr, remap = false, desc = "Format" })
-
 				vim.keymap.set("n", "<leader>i", function()
 					vim.lsp.buf.hover()
 				end, { buffer = bufnr, remap = false, desc = "Hover Type" })
@@ -105,7 +101,7 @@ return {
 			end)
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "eslint", "lua_ls", "vtsls", "svelte", "intelephense" },
+				ensure_installed = { "html", "cssls", "vtsls", "clangd", "biome" },
 				handlers = {
 					lsp_zero.default_setup,
 					lua_ls = function()

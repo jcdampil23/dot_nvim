@@ -40,8 +40,8 @@ local colors = {
 return {
 	"nvim-lualine/lualine.nvim",
 	cond = not vim.g.vscode,
+	event = "UIEnter",
 	dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
-	lazy = false,
 	config = function()
 		require("lualine").setup({
 			options = {

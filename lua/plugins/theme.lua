@@ -1,7 +1,7 @@
 return {
 	"rebelot/kanagawa.nvim",
 	cond = not vim.g.vscode,
-	lazy = false,
+	event = "UIEnter",
 	priority = 1000,
 	config = function()
 		require("kanagawa").setup({
@@ -12,7 +12,7 @@ return {
 			keywordStyle = { italic = true },
 			statementStyle = { bold = true },
 			typeStyle = {},
-			transparent = true, -- do not set background color
+			transparent = false, -- do not set background color
 			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
 			terminalColors = true, -- define vim.g.terminal_color_{0,17}
 			colors = { -- add/modify theme and palette colors
@@ -22,9 +22,9 @@ return {
 			overrides = function(colors)
 				local theme = colors.theme
 				return {
-					NormalFloat = { bg = "none" },
-					FloatBorder = { bg = "none" },
-					FloatTitle = { bg = "none" },
+					-- NormalFloat = { bg = "none" },
+					-- FloatBorder = { bg = "none" },
+					-- FloatTitle = { bg = "none" },
 					-- Save an hlgroup with dark background and dimmed foreground
 					-- so that you can use it where your still want darker windows.
 					-- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
@@ -39,9 +39,9 @@ return {
 				-- change specific usages for a certain theme, or for all of them
 				wave = {
 					ui = {
-						bg_gutter = "none",
+						-- bg_gutter = "none",
 						float = {
-							bg = "none",
+							-- bg = "none",
 						},
 					},
 				},
@@ -52,7 +52,7 @@ return {
 				},
 				all = {
 					ui = {
-						bg_gutter = "none",
+						-- bg_gutter = "none",
 					},
 				},
 			},
@@ -61,9 +61,9 @@ return {
 				light = "lotus",
 			},
 		})
-		vim.cmd("colorscheme kanagawa")
-		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-		vim.cmd("hi LineNr guibg=NONE")
+		-- vim.cmd("colorscheme kanagawa")
+		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		-- vim.cmd("hi LineNr guibg=NONE")
 	end,
 }

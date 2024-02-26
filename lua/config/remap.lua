@@ -11,6 +11,7 @@ keymap("n", "<leader>l", ":Lazy<CR>", { desc = "Open Lazy Plugin Manager" })
 -- File Explorer Remaps
 keymap("n", "<leader>pf", ":FzfLua files<CR>", { desc = "Find Files" })
 keymap("n", "<leader>ps", ":FzfLua live_grep_native<CR>", { desc = "Find Text" })
+keymap("n", "<leader>pc", ":FzfLua colorschemes<CR>", { desc = "Find Color Schemes" })
 
 -- LazyGit Remaps
 keymap("n", "<leader>gg", ":LazyGit<CR>", { desc = "Lazy Git" })
