@@ -27,10 +27,9 @@ return {
 			dim_inactive = false,
 			transparent_mode = true,
 		})
-		vim.cmd("colorscheme gruvbox")
-
-		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-		vim.cmd("hi LineNr guibg=NONE")
+		-- vim.cmd("colorscheme gruvbox")
+		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		-- vim.cmd("hi LineNr guibg=NONE")
 	end,
 }

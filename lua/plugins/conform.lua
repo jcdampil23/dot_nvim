@@ -15,6 +15,9 @@ return {
 						return vim.fs.find(".prettierrc", { upward = true, path = ctx.filename })[1]
 					end,
 				},
+				gofmt = {},
+				goimports = {},
+				golines = {},
 			},
 			formatters_by_ft = {
 				javascript = { { "prettier", "biome" } },
@@ -30,6 +33,7 @@ return {
 				graphql = { { "prettier", "biome" } },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				go = { "gofmt", "goimports", "golines" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
