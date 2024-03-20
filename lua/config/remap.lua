@@ -32,3 +32,5 @@ keymap("v", "<leader>r", [[:s///g<left><left><left>]], { desc = "Replace within 
 -- Move Selection Up(K) or Down(J)
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Selection Down" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Selection Up" })
+
+keymap("n", "<leader>tt", function() print(vim.fn.stdpath("cache") .. "/server.pipe") end, { desc = "Testng" })

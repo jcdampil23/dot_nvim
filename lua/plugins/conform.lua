@@ -18,6 +18,11 @@ return {
 				gofmt = {},
 				goimports = {},
 				golines = {},
+				formatters = {
+					csharpier = {
+						args = { "--write-stdout", "--no-cache", "$FILENAME" },
+					},
+				},
 			},
 			formatters_by_ft = {
 				javascript = { { "prettier", "biome" } },
@@ -34,18 +39,20 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofmt", "goimports", "golines" },
+				cs = { "csharpier" }
+
 			},
 			format_on_save = {
 				lsp_fallback = true,
-				async = false,
+				async = true,
 			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 			conform.format({
 				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
+				async = true,
+				timeout_ms = 2000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
