@@ -16,9 +16,7 @@ return {
 				create_list_item = function(config, name)
 					name = name
 						or normalize_path(
-							vim.api.nvim_buf_get_name(
-								vim.api.nvim_get_current_buf()
-							),
+							vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()),
 							config.get_root_dir()
 						)
 
@@ -29,11 +27,11 @@ return {
 					end
 
 					return {
-						value = vim.fn.expand('%:p'),
+						value = vim.fn.expand("%:p"),
 						context = {
 							row = pos[1],
 							col = pos[2],
-							name = name
+							name = name,
 						},
 					}
 				end,
@@ -41,8 +39,8 @@ return {
 					local name = list_item.context.name
 
 					local windowWidth = vim.api.nvim_win_get_width(0)
-					local ui_fallback_width = 69;
-					local ui_width_ratio = 0.62569;
+					local ui_fallback_width = 69
+					local ui_width_ratio = 0.62569
 
 					local truncateAt = math.floor(windowWidth * ui_width_ratio)
 
@@ -50,14 +48,13 @@ return {
 						truncateAt = ui_fallback_width
 					end
 
-					if (string.len(name) >= truncateAt) then
+					if string.len(name) >= truncateAt then
 						name = Path:new(name):shorten(2)
 					end
 
 					return name
 				end,
-
-			}
+			},
 		})
 
 		local keymap = vim.keymap.set
@@ -85,8 +82,20 @@ return {
 			harpoon:list():select(4)
 		end, { desc = "Harpoon Item 4" })
 
-		keymap("n", "<C-n>", function()
+		keymap("n", "<leader>j", function()
 			harpoon:list():select(5)
 		end, { desc = "Harpoon Item 5" })
+
+		keymap("n", "<leader>k", function()
+			harpoon:list():select(6)
+		end, { desc = "Harpoon Item 6" })
+
+		keymap("n", "<leader>l", function()
+			harpoon:list():select(7)
+		end, { desc = "Harpoon Item 7" })
+
+		keymap("n", "<leader>;", function()
+			harpoon:list():select(8)
+		end, { desc = "Harpoon Item 8" })
 	end,
 }

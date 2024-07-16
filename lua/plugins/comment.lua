@@ -4,6 +4,6 @@ return {
 	opts = {
 		-- add any options here
 	},
-	lazy = true,
+	lazy = false,
 	event = { "InsertEnter" },
 }

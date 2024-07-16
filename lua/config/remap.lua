@@ -7,6 +7,7 @@ keymap("n", "<leader>i", function()
 end, { desc = "LSP Hover" })
 
 keymap("n", "<leader>l", ":Lazy<CR>", { desc = "Open Lazy Plugin Manager" })
+keymap("n", "<leader>ng", ":GoToNotesDirectory<CR>", { desc = "Go to Notes Directory" })
 
 -- File Explorer Remaps
 keymap("n", "<leader>pf", ":FzfLua files<CR>", { desc = "Find Files" })

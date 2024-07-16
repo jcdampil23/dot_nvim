@@ -25,7 +25,9 @@ return {
 				},
 			},
 			formatters_by_ft = {
+				blade = { { "blade-formatter" } },
 				javascript = { { "prettier", "biome" } },
+				php = { { "blade-formatter" } },
 				javascriptreact = { { "prettier", "biome" } },
 				typescript = { { "prettier", "biome" } },
 				typescriptreact = { { "prettier", "biome" } },
@@ -39,12 +41,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofmt", "goimports", "golines" },
-				cs = { "csharpier" }
-
-			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = true,
+				cs = { "csharpier" },
 			},
 		})
 
@@ -52,7 +49,7 @@ return {
 			conform.format({
 				lsp_fallback = true,
 				async = true,
-				timeout_ms = 2000,
+				timeout_ms = 3000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,

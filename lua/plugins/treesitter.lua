@@ -7,11 +7,19 @@ return {
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		require("nvim-treesitter.configs").setup({
-			autotag = {
-				enable = true,
+		require("nvim-ts-autotag").setup({
+			opts = {
+				-- Defaults
+				enable_close = true, -- Auto close tags
+				enable_rename = true, -- Auto rename pairs of tags
+				enable_close_on_slash = false, -- Auto close on trailing </
 			},
-			ensure_installed = { "javascript", "typescript", "lua", "vim", "vimdoc", "query" },
+			-- Also override individual filetype configs, these take priority.
+			-- Empty by default, useful if one of the "opts" global settings
+			-- doesn't work well in a specific filetype
+		})
+		require("nvim-treesitter.configs").setup({
+			ensure_installed = { "javascript", "typescript", "lua", "vim", "vimdoc", "query", "php" },
 			sync_install = false,
 			auto_install = true,
 			highlight = {

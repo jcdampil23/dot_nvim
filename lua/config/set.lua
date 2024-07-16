@@ -11,10 +11,10 @@ vim.opt.relativenumber = true
 -- vim.opt.columns = 120
 
 -- making vim tabs to be 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
 -- disable highlight after search
 vim.opt.hlsearch = false
@@ -25,7 +25,7 @@ vim.opt.incsearch = true
 -- enables 24bit color (if terminal doesn't support it, color schemes look like shit)
 vim.opt.termguicolors = true
 vim.opt.pumblend = 0
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- makes it so that theres always (n) lines above and below when scrolling
 vim.opt.scrolloff = 8

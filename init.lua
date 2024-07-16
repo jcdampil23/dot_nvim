@@ -31,7 +31,3 @@ local opts = {
 }
 require("lazy").setup("plugins", opts)
 require("config.lsp_config")
-local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
-if not vim.loop.fs_stat(pipepath) then
-	vim.fn.serverstart(pipepath)
-end
