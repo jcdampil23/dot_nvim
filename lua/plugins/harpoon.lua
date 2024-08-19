@@ -59,7 +59,7 @@ return {
 
 		local keymap = vim.keymap.set
 		keymap("n", "<leader>a", function()
-			harpoon:list():append()
+			harpoon:list():add()
 		end, { desc = "Add to harpoon list" })
 
 		keymap("n", "<leader>e", function()
