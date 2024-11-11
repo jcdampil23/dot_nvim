@@ -36,6 +36,7 @@ return {
         sources = {
           { name = 'path' },
           { name = 'nvim_lsp' },
+          { name = "codeium" },
           { name = 'luasnip', keyword_length = 2 },
           { name = 'buffer',  keyword_length = 3 },
         },

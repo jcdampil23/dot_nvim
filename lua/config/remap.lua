@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 
 keymap("n", "<leader>q", ":Ex<CR>", { desc = "Go Back to File Browser" })
+keymap('i', '<F14>', '<nop>', { silent = true })
 
 keymap("n", "<leader>i", function()
 	vim.lsp.buf.hover()
